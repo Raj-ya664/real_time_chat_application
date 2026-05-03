@@ -49,4 +49,4 @@ socket.on("disconnect", ()=>{
 
 // })
 
-module.exports = server;
+module.exports = app;
