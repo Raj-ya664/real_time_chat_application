@@ -5,6 +5,11 @@ const cors = require("cors")
 const { Server } = require("socket.io");
 
 app.use(cors());
+
+app.get('/', (req, res) => {
+  res.send('Server is running');
+});
+
 const server = http.createServer(app);
 const io = new Server(server, {
     cors :{
@@ -39,8 +44,9 @@ socket.on("disconnect", ()=>{
 
 })
 
+// server.listen(3001, ()=>{
+//     console.log("SERVER IS RUNNING ");
 
-server.listen(3001, ()=>{
-    console.log("SERVER IS RUNNING ");
+// })
 
-})
+module.exports = server;
